@@ -4,6 +4,19 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+setuptools = "*"
+ipykernel = "*"
+pandas = "*"
+numpy = "*"
+sentence-transformers = "*"
+torch = "*"
+transformers = "*"
+nltk = "*"
+ordered-set = "*"
+strsimpy = "*"
+py-thesaurus = "*"
+python-decouple = "*"
+accelerate = "*"
 
 [dev-packages]
 

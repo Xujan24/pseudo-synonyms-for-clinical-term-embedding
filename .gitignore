@@ -1,1 +1,11 @@
 /pymedtermino
+/results
+/medisim
+playground.ipynb
+dump.txt
+.env
+run.sh
+*.ipynb
+*.bak
+/umlsbert
+val.tsv

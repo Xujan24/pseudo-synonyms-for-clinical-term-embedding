@@ -1,0 +1,1 @@
+This is the code repository for our work "Using Pseudo-Synonyms to Generate Embeddings for Clinical Terms". 

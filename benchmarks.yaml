@@ -1,0 +1,24 @@
+pedersen:
+  data_dir: ./data/benchmarks/pedersen.tsv
+  max: 4
+  min: 1
+
+hliaoutakis:
+  data_dir: ./data/benchmarks/hliaoutakis.tsv
+  max: 1
+  min: 0
+
+mayosrs:
+  data_dir: ./data/benchmarks/mayosrs.tsv
+  max: 10
+  min: 1
+
+umnsrs:
+  data_dir: ./data/benchmarks/umnsrs.tsv
+  max: 1600
+  min: 0
+
+EHR-RelB:
+  data_dir: ./data/benchmarks/EHR-RelB.tsv
+  max: 3
+  min: 0

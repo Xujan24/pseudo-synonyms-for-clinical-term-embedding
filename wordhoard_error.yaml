@@ -1,0 +1,58 @@
+2024-09-27 13:01:23:wordhoard.utilities.request_html:INFO: --------------------------------------------------------------------------------
+2024-09-27 13:01:23:wordhoard.utilities.request_html:INFO: The requested URL is protected by Cloudflare's DDoS mitigation service.
+2024-09-27 13:01:23:wordhoard.utilities.request_html:INFO: Requested URL: https://www.collinsdictionary.com/dictionary/english-thesaurus/lung
+2024-09-27 13:01:23:wordhoard.utilities.request_html:INFO: --------------------------------------------------------------------------------
+2024-09-27 13:01:23:wordhoard.utilities.request_html:INFO: --------------------------------------------------------------------------------
+2024-09-27 13:01:23:wordhoard.utilities.request_html:ERROR: Response Status Code: 404
+2024-09-27 13:01:23:wordhoard.utilities.request_html:INFO: The HTTP 404 Not Found status code means that the file or page that the was requested was not found on the server
+2024-09-27 13:01:23:wordhoard.utilities.request_html:INFO: Requested URL: https://www.merriam-webster.com/thesaurus/lung
+2024-09-27 13:01:23:wordhoard.utilities.request_html:INFO: --------------------------------------------------------------------------------
+2024-09-27 13:01:23:wordhoard.synonyms:INFO: Merriam-webster.com had no synonym reference for the word lung
+2024-09-27 13:01:23:wordhoard.synonyms:INFO: Thesaurus.com had no synonym reference for the word lung
+2024-09-27 13:01:24:wordhoard.utilities.cloudflare_bypass:INFO: --------------------------------------------------------------------------------
+2024-09-27 13:01:24:wordhoard.utilities.cloudflare_bypass:INFO: Cloudflare DDoS mitigation service protection bypass successful.
+2024-09-27 13:01:24:wordhoard.utilities.cloudflare_bypass:INFO: Requested URL: https://www.collinsdictionary.com/dictionary/english-thesaurus/lung
+2024-09-27 13:01:24:wordhoard.utilities.cloudflare_bypass:INFO: --------------------------------------------------------------------------------
+2024-09-27 13:01:24:wordhoard.synonyms:INFO: Collins Dictionary had no synonym reference for the word lung
+2024-09-27 13:02:29:wordhoard.utilities.request_html:INFO: --------------------------------------------------------------------------------
+2024-09-27 13:02:29:wordhoard.utilities.request_html:INFO: The requested URL is protected by Cloudflare's DDoS mitigation service.
+2024-09-27 13:02:29:wordhoard.utilities.request_html:INFO: Requested URL: https://www.collinsdictionary.com/dictionary/english-thesaurus/lungs
+2024-09-27 13:02:29:wordhoard.utilities.request_html:INFO: --------------------------------------------------------------------------------
+2024-09-27 13:02:30:wordhoard.utilities.request_html:INFO: --------------------------------------------------------------------------------
+2024-09-27 13:02:30:wordhoard.utilities.request_html:ERROR: Response Status Code: 404
+2024-09-27 13:02:30:wordhoard.utilities.request_html:INFO: The HTTP 404 Not Found status code means that the file or page that the was requested was not found on the server
+2024-09-27 13:02:30:wordhoard.utilities.request_html:INFO: Requested URL: https://www.synonym.com/synonyms/lungs
+2024-09-27 13:02:30:wordhoard.utilities.request_html:INFO: --------------------------------------------------------------------------------
+2024-09-27 13:02:30:wordhoard.synonyms:INFO: Synonym.com had no synonym reference for the word lungs
+2024-09-27 13:02:30:wordhoard.synonyms:INFO: Thesaurus.com had no synonym reference for the word lungs
+2024-09-27 13:02:30:wordhoard.utilities.request_html:INFO: --------------------------------------------------------------------------------
+2024-09-27 13:02:30:wordhoard.utilities.request_html:ERROR: Response Status Code: 404
+2024-09-27 13:02:30:wordhoard.utilities.request_html:INFO: The HTTP 404 Not Found status code means that the file or page that the was requested was not found on the server
+2024-09-27 13:02:30:wordhoard.utilities.request_html:INFO: Requested URL: https://www.merriam-webster.com/thesaurus/lungs
+2024-09-27 13:02:30:wordhoard.utilities.request_html:INFO: --------------------------------------------------------------------------------
+2024-09-27 13:02:30:wordhoard.synonyms:INFO: Merriam-webster.com had no synonym reference for the word lungs
+2024-09-27 13:02:31:wordhoard.utilities.cloudflare_bypass:INFO: --------------------------------------------------------------------------------
+2024-09-27 13:02:31:wordhoard.utilities.cloudflare_bypass:INFO: Cloudflare DDoS mitigation service protection bypass successful.
+2024-09-27 13:02:31:wordhoard.utilities.cloudflare_bypass:INFO: Requested URL: https://www.collinsdictionary.com/dictionary/english-thesaurus/lungs
+2024-09-27 13:02:31:wordhoard.utilities.cloudflare_bypass:INFO: --------------------------------------------------------------------------------
+2024-09-27 13:02:31:wordhoard.synonyms:INFO: Collins Dictionary had no synonym reference for the word lungs
+2024-09-27 13:09:06:wordhoard.utilities.request_html:INFO: --------------------------------------------------------------------------------
+2024-09-27 13:09:06:wordhoard.utilities.request_html:INFO: The requested URL is protected by Cloudflare's DDoS mitigation service.
+2024-09-27 13:09:06:wordhoard.utilities.request_html:INFO: Requested URL: https://www.collinsdictionary.com/dictionary/english-thesaurus/infiltrates
+2024-09-27 13:09:06:wordhoard.utilities.request_html:INFO: --------------------------------------------------------------------------------
+2024-09-27 13:09:07:wordhoard.utilities.request_html:INFO: --------------------------------------------------------------------------------
+2024-09-27 13:09:07:wordhoard.utilities.request_html:ERROR: Response Status Code: 404
+2024-09-27 13:09:07:wordhoard.utilities.request_html:INFO: The HTTP 404 Not Found status code means that the file or page that the was requested was not found on the server
+2024-09-27 13:09:07:wordhoard.utilities.request_html:INFO: Requested URL: https://www.thesaurus.com/browse/infiltrates
+2024-09-27 13:09:07:wordhoard.utilities.request_html:INFO: --------------------------------------------------------------------------------
+2024-09-27 13:09:07:wordhoard.synonyms:INFO: Thesaurus.com had no synonym reference for the word infiltrates
+2024-09-27 13:09:07:wordhoard.utilities.request_html:INFO: --------------------------------------------------------------------------------
+2024-09-27 13:09:07:wordhoard.utilities.request_html:ERROR: Response Status Code: 404
+2024-09-27 13:09:07:wordhoard.utilities.request_html:INFO: The HTTP 404 Not Found status code means that the file or page that the was requested was not found on the server
+2024-09-27 13:09:07:wordhoard.utilities.request_html:INFO: Requested URL: https://www.synonym.com/synonyms/infiltrates
+2024-09-27 13:09:07:wordhoard.utilities.request_html:INFO: --------------------------------------------------------------------------------
+2024-09-27 13:09:07:wordhoard.synonyms:INFO: Synonym.com had no synonym reference for the word infiltrates
+2024-09-27 13:09:08:wordhoard.utilities.cloudflare_bypass:INFO: --------------------------------------------------------------------------------
+2024-09-27 13:09:08:wordhoard.utilities.cloudflare_bypass:INFO: Cloudflare DDoS mitigation service protection bypass successful.
+2024-09-27 13:09:08:wordhoard.utilities.cloudflare_bypass:INFO: Requested URL: https://www.collinsdictionary.com/dictionary/english-thesaurus/infiltrates
+2024-09-27 13:09:08:wordhoard.utilities.cloudflare_bypass:INFO: --------------------------------------------------------------------------------
