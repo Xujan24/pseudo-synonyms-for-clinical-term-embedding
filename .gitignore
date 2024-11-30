@@ -9,3 +9,4 @@ run.sh
 *.bak
 /umlsbert
 val.tsv
+wordhoard_error.yaml
