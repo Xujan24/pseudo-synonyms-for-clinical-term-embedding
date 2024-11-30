@@ -48,19 +48,16 @@ def get_embeddings(
     return mu
 
 
-def filter_terms(query: str, terms: List[str], method: str, m: int, n: int, s: int, p: str) -> List[str]:
+def filter_terms(query: str, terms: List[str], method: str, m: int, n: int, s: int) -> List[str]:
     """returns a subset of (or whole) terms
     
     Keyword arguments:\\
     query -- query term \\
     terms -- list of all terms \\
     method -- method to create the sub list; 'all', 'top', 'least', 'both', 'filtered' \\
-    m -- number of minority terms \\
-    n -- number of majority terms \\
-    s -- min levenshtein distance (LD) between the closest similar terms and the query term \\
-    p -- preference for majority terms; p = 'top' - majority of the terms will be those with min. LD and p='least' - majority will be at max. LD. 
-    
-    For n = 20, f = 6, length of the returned list will be a maximum of 24 (20 + 3 + 1) 
+    m -- number of distant terms \\
+    n -- number of closest terms \\
+    s -- min levenshtein distance (LD) between the closest similar terms and the query term
     
     Return: filtered list of terms
     """
@@ -72,21 +69,29 @@ def filter_terms(query: str, terms: List[str], method: str, m: int, n: int, s: i
             ## for using all terms
         l = [*terms, query]
 
-    elif method == 'top':
+    elif method == 'closest':
         ## for using top n similar terms
-        l = [terms[z] for z in np.argsort(lev_dists)[:n-1]]
+        lev_dists_cp = lev_dists.copy()
+        lev_dists_cp = np.max(lev_dists_cp)
+
+        l = [terms[z] for z in np.argsort(lev_dists_cp)[:n-1]]
         l = [*l, query]
 
-    elif method == 'least':
+        del lev_dists_cp
+
+    elif method == 'distant':
         ## for using bottom n similar terms
-        l = [terms[z] for z in np.flip(np.argsort(lev_dists))[:n-1]]
+        l = [terms[z] for z in np.flip(np.argsort(lev_dists))[:m-1]]
         l = [*l, query]
 
     elif method == 'both':
-        l1 = [terms[z] for z in np.argsort(lev_dists)[:math.floor(n/2)]]
+        lev_dists_cp = lev_dists.copy()
+        lev_dists_cp = np.max(lev_dists_cp)
+
+        l1 = [terms[z] for z in np.argsort(lev_dists_cp)[:math.floor(n/2)]]
         l2 = [terms[z] for z in np.flip(np.argsort(lev_dists))[:math.floor(n/2)]]
         l = [*l1, *l2, query]
-        del l1, l2
+        del l1, l2, lev_dists_cp
 
     elif method == 'filtered':
         # We select a fixed number of terms with both small and large levenshtein distances.
@@ -98,17 +103,9 @@ def filter_terms(query: str, terms: List[str], method: str, m: int, n: int, s: i
         mask = lev_dists_cp < s
         lev_dists_cp[mask] = np.max(lev_dists_cp)
 
-        if p == 'top':
-            idx_1 = n
-            idx_2 = m
-        
-        elif p == 'least':
-            idx_1 = m
-            idx_2 = n
-
         ## take n terms with small lev. dist.
-        l1 = [terms[z] for z in np.argsort(lev_dists_cp)[:idx_1]]        ## terms with least lev. dists
-        l2 = [terms[z] for z in np.flip(np.argsort(lev_dists))[:idx_2]]  ## terms with large lev. dists
+        l1 = [terms[z] for z in np.argsort(lev_dists_cp)[:n]]        ## terms with least lev. dists
+        l2 = [terms[z] for z in np.flip(np.argsort(lev_dists))[:m]]  ## terms with large lev. dists
 
         ## concatinate terms with small and large lev. dist. to get the final list of similar terms
         l = [*l1, *l2, query]

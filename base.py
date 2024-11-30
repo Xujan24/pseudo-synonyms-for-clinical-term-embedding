@@ -10,7 +10,7 @@ from utils.helpers import normalize_score, get_embeddings, cos_sim_score, get_te
 import argparse
 
 VALID_SOURCES = ['snomedct', 'umls', 'snomedct+umls']
-ALLOWED_METHODS = ['all', 'top', 'least', 'both', 'filtered']
+ALLOWED_METHODS = ['all', 'closest', 'distant', 'both', 'filtered']
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -18,10 +18,9 @@ if __name__ == '__main__':
     parser.add_argument('--source', help='source of clinical terms', type=str, default=VALID_SOURCES[0])
     parser.add_argument('--model-id', help='pretrained model id from huggingface', default='sentence-transformers/all-mpnet-base-v1')
     parser.add_argument('--method', help='method to select similar terms [all, top, least, filtered]', type=str, default='filtered')
-    parser.add_argument('--m', help='number of minority terms', type=int, default=3)
-    parser.add_argument('--n', help='maximum number of similar terms for each term', type=int, default=20)
+    parser.add_argument('--m', help='number of distant terms', type=int, default=3)
+    parser.add_argument('--n', help='number of closest terms', type=int, default=20)
     parser.add_argument('--s', help='Threshold to filter similar terms using Levenshtein distance', type=int, default=20)
-    parser.add_argument('--p', help='What to prefer: either those with least Levenshtein distance or with the most or equal preference', type=str, default='top')
     parser.add_argument('--score', help='Pearson (per) or Spearman (spe) correlation coefficient score.', type=str, default='per')
     parser.add_argument('--exclude-null', help='Whether to exclude those terms with no similar terms.', action='store_true')
     parser.add_argument('--out', help='output filename', type=str)
@@ -29,9 +28,6 @@ if __name__ == '__main__':
 
     if not args.terms_only and args.method not in ALLOWED_METHODS:
         raise ValueError(f'Invalid option for --method. Valid options include {ALLOWED_METHODS}')
-    
-    if args.p and args.p not in ['top', 'least']:
-        raise ValueError('--p must be either top, least or both')
     
     if args.source not in VALID_SOURCES:
         raise ValueError(f'Invalid option for --source. Valid options include {VALID_SOURCES}')
@@ -59,12 +55,12 @@ if __name__ == '__main__':
         out.write(f'\t approach: {args.method} \n')
         if not args.terms_only:
             out.write(f'\t source: {args.source} \n')
-        if args.method != 'all':
+        if args.method not in ['all', 'distant']:
             out.write(f'\t n: {args.n} \n')
-        if args.method == 'filtered':
+        if args.method not in ['all', 'closest']:
             out.write(f'\t m: {args.m} \n')
+        if args.method == 'filtered':
             out.write(f'\t s: {args.s} \n')
-            out.write(f'\t p: {args.p} \n')
         
         out.write(f'\t metric {'Pearson' if args.score == 'per' else 'Spearman'} \n')
         out.write(f'\t exclude null: {args.exclude_null} \n\n\n')
@@ -106,7 +102,7 @@ if __name__ == '__main__':
                     ## if there's large number of psuedo-synonyms, then we apply filtering
                     ## use all psuedo-synonyms, otherwise.
                     if len(container) > args.n:
-                        l = filter_terms(query=term, terms=container, method=args.method, n=args.n, m=args.m, p=args.p, s=args.s)
+                        l = filter_terms(query=term, terms=container, method=args.method, n=args.n, m=args.m, s=args.s)
                     else:
                         l = [*container, term]
                         l = list(set(container))
