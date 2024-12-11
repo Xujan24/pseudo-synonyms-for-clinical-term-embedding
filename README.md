@@ -12,6 +12,7 @@ pipenv install
 ### Additional requirements
 1. Please follow the instruction to import SNOMED CT using `pymedtermino`. The documentation can be accessed from [this](https://pythonhosted.org/PyMedTermino/) link.
 2. Download the pre-trained `UmlsBERT` model from [here](https://github.com/gmichalo/UmlsBERT)
+3. To use UMLS get your api key from [here](https://documentation.uts.nlm.nih.gov/rest/authentication.html) and paste it in `.env` file (rename `.env.example` to `.env`)
 
 ## Usage
 You can run `base.py` file to reproduce our results. For e.g., if you want to generate term embeddings using only the clinical terms itself then you can do so as follows:
