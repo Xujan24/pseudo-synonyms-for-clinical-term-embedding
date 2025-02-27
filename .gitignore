@@ -5,7 +5,7 @@ playground.ipynb
 dump.txt
 .env
 run.sh
-*.ipynb
+hyper-parameter-tuning.ipynb
 *.bak
 /umlsbert
 val.tsv
