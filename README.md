@@ -67,3 +67,7 @@ python base.py \\
 --n 20 \\
 --out <output_file>
 ```
+
+## Citation
+
+*Coming soon*
