@@ -1,6 +1,6 @@
 This is the source code for our work on "*Using Pseudo-Synonyms to Generate Embeddings for Clinical Terms*".
 
-[Paper Link](https://link.springer.com/chapter/10.1007/978-981-96-8298-0_17)
+[Paper Link](https://rdcu.be/eq6Ys)
 
 ## Abstract
 Existing approaches attempt to explicitly learn clinical term embedding from clinical datasets by training a model, such as word2vec and recurrent neural network or fine-tuning a pre-trained large language model (LLM). While the corpus-based methods require exposure to a rich vocabulary in the training corpus, insufficient contextual information, in clinical terms, makes LLMs prone to failure to generate meaningful embeddings. In this regard, we propose a novel method to generate embeddings for clinical terms using *pseudo-synonyms* - terms that might be associated with a clinical term but not the exact synonyms. The proposed method uses an LLM as a black-box tool and requires no training or fine-tuning. To demonstrate the effectiveness of the learned embeddings, we compared our approach with existing corpus-based embedding approaches on *semantic textual similarity* (STS) tasks on five benchmark datasets. Our proposed method outperformed all existing approaches.
